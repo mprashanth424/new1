@@ -51,8 +51,9 @@ pipeline {
             steps {
                 dir('frontend') {
                     sh '''
-                    /opt/homebrew/bin/npm install
-                    nohup /opt/homebrew/bin/npm start &
+                    export PATH=/opt/homebrew/bin:$PATH
+		    npm install
+                    nohup npm start &
                     '''
                 }
             }
