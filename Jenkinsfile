@@ -15,7 +15,7 @@ pipeline {
         stage('Install Go') {
             steps {
                 sh '''
-                curl -L -o go.tar.gz https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
+                curl -L -o go.tar.gz https://go.dev/dl/go1.21.0.darwin-amd64.tar.gz
                 mkdir -p ${GO_BIN}
                 tar -C ${GO_BIN} -xzf go.tar.gz
                 export PATH=${GO_BIN}/go/bin:$PATH
